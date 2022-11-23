@@ -1,28 +1,20 @@
 import React from "react";
 import "./Home.css";
 
-const Home = () => {
-    // const dishes = [
-    //     {
-    //       id:1,
-    //       name:'plato 1',
-    //       description:'Este es el plato 1',
-    //       price:10
-    //     },
-    //     {
-    //       id:2,
-    //       name:'plato 2',
-    //       description:'Este es el plato 2',
-    //       price:20
-    //     },
-    //     {
-    //       id:3,
-    //       name:'plato 3',
-    //       description:'Este es el plato 3',
-    //       price:15
-    //     }
-    //   ]
-      
+const Home = (props) => {
+    
+    const dishesList  = props.dishes.map((dish)=>{
+        return(
+          <div>
+            <div>
+            Nombre:<h2>{dish.name}</h2>
+              Descripción: <h3>{dish.description}</h3>
+              Precio: <h2>{dish.price} €</h2>
+            </div>
+            <hr/>        
+          </div>
+        )
+      })
     return (
         <div>
        <div className="contenedor-home">
@@ -37,8 +29,8 @@ const Home = () => {
          </p>
        </div>
        <div className="dish">
-         <h1>Nuestros Platos</h1>
-         <div className="dishes-container">dishes</div><div>
+         <h3>Nuestros Platos</h3>
+         <div className="dish-card">{dishesList}</div><div>
          
       </div>  
        </div>
