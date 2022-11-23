@@ -5,23 +5,11 @@
     flex-direction: column;
 }
 
-.dishes-container {
-    text-align: start;
-    display: flex;
-    gap: 30px;
-    width: 80%;
-    flex-wrap: wrap;
-}
 
-.dish-card {
-    border: 1px solid rgba(74, 69, 69, 0.431);
-    border-radius: 10px;
-    padding: 10px 20px;
-    width: 200px;
-    box-shadow: 5px 5px 10px 2px black;
-}
-
-.dish-card p {
-    display: flex;
-    flex-direction: column;
+.texto-acerca-de{
+    color: rgb(230, 230, 230);
+    font-size: 25px;
+    width: 800px;
+    margin: auto;
+   
 }

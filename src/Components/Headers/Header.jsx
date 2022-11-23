@@ -7,10 +7,10 @@ const Header = () => {
     <div className="contenedor-nav">
       <nav className="nav">
         <p>
-          <Link to="/Home">Home</Link>
+          <Link to="/">Home</Link>
         </p>
         <p>
-          <Link to="/Reserva">Reserva</Link>
+          <Link to="/Reservas">Reserva</Link>
         </p>
         <p>
           <Link to="/Ubicacion">Ubicacion</Link>

@@ -27,7 +27,9 @@ const Reservas = () => {
   const clearState = () => {
     setData({ ...initialState });
   };
+
   let regexName = new RegExp(/^([a-zA-Z\s]{5,25})$/);
+
   useEffect(() => {
     if (!regexName.test(data.nombre) || !data.nombre === " ") {
       setMessage("el nombre debe ser con un formato correcto");
@@ -37,14 +39,16 @@ const Reservas = () => {
       setBtnDisabled(true);
     } else {
       setMessage(null);
-
       setBtnDisabled(false);
     }
     //eslint-disable-next-line
   }, [data]);
-  const handleInputChange = (event) => {
-    setData({ ...data, [event.target.name]: event.target.value });
-  };
+  const handleInputChange = (e) => {
+    setData({
+        ...data,
+        [e.target.name]: e.target.value,
+      });
+    };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -60,7 +64,10 @@ const Reservas = () => {
         " " +
         data.Observaciones
     );
+
     localStorage.setItem("Datos Reserva", JSON.stringify(data));
+
+    
     clearState();
     setTimeout(() => {
       navigate("/");
@@ -76,31 +83,35 @@ const Reservas = () => {
           <input
             type="text"
             name="nombre"
-            value={data.userName}
+            value={data.nombre}
             placeholder="Nombre y Apellido"
             onChange={handleInputChange}
           />
           <input
             type="number"
             name="comensales"
+            value={data.comensales}
             placeholder="Cantidad de comensales"
             onChange={handleInputChange}
           />
           <input
             type="tel"
             name="telefono"
+            value={data.telefono}
             placeholder="Número de telefono"
             onChange={handleInputChange}
           />
           <input
             type="date"
             name="fecha"
+            value={data.fecha}
             placeholder="fecha"
             onChange={handleInputChange}
           />
           <input
             type="text"
             name="Observaciones"
+            value={data.Observaciones}
             placeholder="Observaciones"
             onChange={handleInputChange}
           />
@@ -109,7 +120,7 @@ const Reservas = () => {
           </button>
         </form>
       </div>
-      <p className="reserva-mensaje">{visible ? message : "Lo estamos redirigiendo al Home"}</p>
+      <p className="form-mensaje">{visible ? message : "Lo estamos redirigiendo al Home..."}</p>
     </>
   );
 };

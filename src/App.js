@@ -1,21 +1,21 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Components/Home/Home";
-import Header from "./Components/Header/Header.jsx";
-import Reservas from "./Components/Reservas/Reservas";
+import Header from "./Components/Headers/Header.jsx";
+import Reservas from "./Components/Reservas/Reservas.jsx";
 import Ubicacion from "./Components/Ubciacion/Ubicacion";
-
 
 function App() {
   return (
     <div className="App">
-     <BrowserRouter>
-      <Header />
+      <BrowserRouter>
+        <Header />
+
         <Routes>
-          <Route path="/" element={<Reservas />} />
           <Route path="/" element={<Home />} />
-          <Route path="/" element={<Ubicacion />} />
+          <Route path="/Ubicacion" element={<Ubicacion />} />
+          <Route path="/Reservas" element={<Reservas />} />
         </Routes>
       </BrowserRouter>
     </div>
