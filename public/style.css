@@ -1,0 +1,38 @@
+*{
+    margin:0;
+    padding:0;
+    box-shadow:border-box;
+  }
+  body{
+    overflow:hidden;
+    height:100%;
+    width:100%;
+    background:#000;
+  }
+  section{
+      height:100%;
+    width:100%;
+  }
+  span{
+    border-radius:50%;
+    pointer-events:none;
+    position:absolute;
+    background:rgb(97, 70, 70);
+    animation: animate 5s linear infinite;
+  }
+  @keyframes animate{
+    0%{
+      transform:scale(0) translateY(0) rotate(0deg);
+      opacity:0;
+    }
+    10%{
+          opacity:1; 
+    }
+    90%{
+          opacity:1; 
+    }
+    100%{
+      transform:scale(1) translateY(-500%) rotate(360deg);
+          opacity:0; 
+    }
+  }
